@@ -188,4 +188,69 @@ header {
 
 
 
+  @media only screen and (max-width: 768px) {
+    header {
+      text-align: center;
+    }
+  
+    .navbar {
+      margin-top: 10px;
+      display: block;
+      text-align: center;
+    }
+  
+    .navbar a {
+      display: block;
+      margin: 10px 0;
+    }
+  
+    .main {
+      padding: 10px;
+    }
+  
+    .box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .box .Adopting,
+    .box .Volunteering,
+    .box .Charity {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+    
+    .box3,
+.box4 {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin: 20px;
+}
 
+.review {
+  width: 300px;
+  padding: 20px;
+  margin: 10px;
+  border: 1px solid #ccc;
+  text-align: center;
+  overflow: hidden;
+}
+
+.review h3 {
+  margin-bottom: 10px;
+  font-size: 1.2em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.review p {
+  font-style: italic;
+  font-size: 14px;
+  line-height: 1.4;
+  overflow: hidden;
+    }
+    
+  }
