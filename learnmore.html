@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        margin: 0;
+        font-family: "Open Sans", sans-serif;
+        font-size: 17px;
+        font-weight: bolder;
+        background-color: whitesmoke;
+        background-size: cover;
+      }
+
+      h2 {
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+          sans-serif;
+        color: rgb(29, 68, 29);
+      }
+
+      .head {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 5%;
+      }
+
+      .box1 {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 30px;
+        background-color: rgba(95, 180, 95, 0.418);
+        padding: 20px;
+        border-radius: 70px;
+        min-height: 600px;
+      }
+      .doctor-container {
+        display: flex;
+        justify-content: space-around;
+        margin-bottom: 20px; /* Adjust space between doctors and text */
+      }
+      .doctor {
+        width: 350px;
+        padding: 20px;
+        border-radius: 10px;
+        height: 450px;
+        margin-right: 10px;
+        background-color: whitesmoke;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+      }
+      .doctor img:not(.icon) {
+        display: block;
+        border: 2px solid black;
+        width: 200px; /* Adjust as needed */
+        height: 200px; /* Adjust as needed */
+        object-fit: cover; /* Maintain aspect ratio */
+      }
+      .doctor h3 {
+        text-align: center;
+      }
+
+      .doctor p {
+        font-weight: normal;
+      }
+
+      .doctor .icon {
+        width: 30px; /* Adjust width as needed */
+        height: 30px; /* Adjust height as needed */
+        margin-right: 5px; /* Adjust spacing between icon and text */
+        vertical-align: middle; /* Align icon vertically with text */
+      }
+      .doctor a {
+        text-decoration: none;
+        color: rgb(20, 71, 20);
+        font-weight: bold;
+      }
+      .doctor p {
+        margin: 10px 0; /* Adjust the margin as needed */
+      }
+      .text {
+        text-align: center;
+        margin-top: 20px; /* Adjust spacing between doctors and text */
+        font-size: 13px;
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="main">
+      <div class="head">
+        <h1>Here are two of our excellent doctors who play pivotal roles</h1>
+      </div>
+      <div class="box1">
+        <div class="doctor-container">
+          <div class="doctor">
+            <img src="img/doc1.jpeg" alt="" />
+            <h3>Dr. Matthew Davis</h3>
+            <p>
+              Dr. Matthew Davis is a dedicated veterinarian with over 10 years
+              of experience in caring for pets.
+            </p>
+            <p>
+              <img class="icon" src="img/email.png" alt="" /><a href="#"
+                >MattDavis@outlook.com</a
+              >
+            </p>
+            <p>
+              <img class="icon" src="img/phone.png" alt="" /><a href="#"
+                >+41 432874382</a
+              >
+            </p>
+          </div>
+          <div class="doctor">
+            <img src="img/doc2.jpeg" alt="" />
+            <h3>Dr.Emily Turner</h3>
+            <p>
+              Dr. Emily Turner is a compassionate veterinarian known for her
+              gentle approach and expertise in animal behavior.
+            </p>
+            <p>
+              <img class="icon" src="img/email.png" alt="" /><a href="#"
+                >EmilyTurner@outlook.com</a
+              >
+            </p>
+            <p>
+              <img class="icon" src="img/phone.png" alt="" /><a href="#"
+                >+41 93847292</a
+              >
+            </p>
+          </div>
+        </div>
+        <div class="text">
+          <h2>
+            Please don't hesitate to contact our experienced doctors for
+            valuable and free advice regarding your pets health and well-being.
+          </h2>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
