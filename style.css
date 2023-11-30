@@ -56,3 +56,64 @@ header {
     cursor: pointer;
     transition: background-color 0.3s;
 }
+.Welcome{
+    background-image: url("img/dTuctf.jpg");
+    height: 300px;
+    display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 15px;
+      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  }
+  
+  
+  .box {
+    color:black;
+    font-size: 10px;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+    padding: 20px;
+  }
+  
+  .box a{
+    text-decoration: none;
+    color: black;
+    font-size: 15px;
+  }
+  
+  
+  .Adopting,
+  .Volunteering,
+  .Charity {
+      width: fit-content;
+      padding: 20px;
+      border-radius: 10px;
+      height: 270px;
+      margin-right: 10px;
+      position: relative;
+      background-size: cover;
+      background-position: center;
+      box-sizing: border-box; /* Ensure consistent box sizing */
+  }
+  
+  .Adopting {
+    background-image: url(img/adopt.jpg);
+    box-shadow: 0 0 10px rgba(4, 79, 48, 0.7); /* Green shadow for Volunteering */
+  }
+  .Volunteering {
+    background-image: url(img/volunteer.jpeg);
+    box-shadow: 0 0 10px rgba(4, 79, 48, 0.7); /* Green shadow for Volunteering */
+  }
+  .Charity {
+    background-image: url(img/donate2.jpeg);
+    box-shadow: 0 0 10px rgba(4, 79, 48, 0.7); /* Green shadow for Volunteering */
+  }
+  
+  .button:hover {
+      background-color :black; /* Darker green color on hover, you can change this */
+  }
+  
