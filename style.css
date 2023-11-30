@@ -57,17 +57,19 @@ header {
     transition: background-color 0.3s;
 }
 .Welcome{
-    background-image: url("img/dTuctf.jpg");
-    height: 300px;
+    color: rgb(91, 91, 91);
+    width: 100%;
+    height: 200px;
+    background-image:url(img/dTuctf.jpg) ;
+    background-size: cover;
     display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 15px;
-      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    align-items: center;
+    justify-content: center;
   }
   
   
   .box {
+    
     color:black;
     font-size: 10px;
     align-items: center;
