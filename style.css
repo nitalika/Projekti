@@ -1,5 +1,5 @@
 body {
-    margin: 0;
+    margin: 10px;
     font-family: 'Open Sans', sans-serif;
     font-size: 17px;
     font-weight: bolder;
@@ -59,7 +59,7 @@ header {
 .Welcome{
     color: rgb(91, 91, 91);
     width: 100%;
-    height: 200px;
+    height: 300px;
     background-image:url(img/dTuctf.jpg) ;
     background-size: cover;
     display: flex;
@@ -123,10 +123,10 @@ header {
     justify-content: center;
     align-items: center;
     flex-direction: column; 
-    background-color: rgba(82, 161, 128, 0.562);
-    padding: 20px;
+    background-color: rgb(245, 245, 245);
+    box-shadow: 0 0 10px rgba(4, 79, 48, 0.7);     padding: 20px;
     margin-top: 17%;
-    border-radius: 100px;
+    border-radius: 60px;
   }
   
   .aboutus {
@@ -148,38 +148,50 @@ header {
     align-items: center;
     margin-top: 50px;
     font-size: 20px;
+    padding: 20px;
+
   }
 
-  .box3,
-  .box4 {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    margin-top: 30px;
-    background-color: transparent;
-    padding: 20px;
-  }
+.box3 {
+ margin-top: 20px;
+  box-shadow: 0 0 10px rgba(4, 79, 48, 0.7);  
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 40px;
+  border-radius: 60px;
+  margin-bottom: 20px;
+}
 
-  .review {
-    width: 20%; 
-    padding: 20px;
-    border-radius: 10px;
-    height: 250px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
-    margin-right: 10px;
-    background-color: rgba(95,180,95,0.418); 
-  }
-  .review img {
-    max-width: 100%; 
-    height: auto;
-    display: block;
-  }
-  .review p {
-    font-size: 15px;
-    color: gray;
-    font-family: cursive;
-  }
+.titulli {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+
+.review {
+  width: calc(33.33% - 20px);
+  margin-bottom: 10px;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: #afccaf;
+  border-radius: 40px;
+}
+
+.review img {
+  width: 60px;
+}
+
+.review h3 {
+  display: inline;
+}
+
+.review p {
+  font-size: 15px;
+  color: #555;
+}
+
 
 
 
@@ -217,7 +229,7 @@ header {
     }
     
     .box3,
-.box4 {
+{
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
@@ -249,3 +261,44 @@ header {
     }
     
   }
+  footer{
+    background-color: lightgray;
+  }
+.footer{
+  width: 100%;
+  padding: 70px 30px 20 px;
+}
+.contact{
+  display: flex;
+  justify-content: center;
+}
+.contact a{
+  text-decoration: none;
+  padding: 10px;
+  background-color: gainsboro;
+  margin: 10px;
+  border-radius: 50%;
+}
+.contact a img{
+  width: 30px;
+}
+.about{
+  margin: 30px 0;
+}
+.about ul{
+  display: flex;
+  justify-content: center;
+}
+.about ul li a{
+  color: gray;
+  margin: 20px;
+  text-decoration: none;
+}
+.bottom{
+  background-color: #111;
+  padding: 20px;
+  text-align: center;
+}
+.bottom p{
+color: white;
+}
