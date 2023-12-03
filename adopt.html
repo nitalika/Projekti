@@ -1,338 +1,258 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pets Up for Adoption</title>
     <style>
-        
-    body {
-    margin: 0; 
-    font-family:Georgia, 'Times New Roman', Times, serif;
-    font-size: 17px; 
-    background-color: darkgrey;
-}
+      /* Global styles */
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        line-height: 1.6;
+        background-color: #f7f7f7;
+        color: #333;
+      }
 
-header {
-    background-color: white; 
-    padding: 15px 0; 
-}
+      .container {
+        width: 100%;
+        margin: 0 auto;
+        overflow: hidden;
+      }
 
-.container{
-    display: flex; 
-    justify-content: space-between;
-    align-items: center; 
-    margin-left: 20px; 
-    margin-right: 20px; 
-}
+      /* Header styles */
+      header {
+        background-color: rgb(162, 201, 162);
+        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+        padding: 20px 0;
+      }
 
-.logo {
-    text-decoration: none; 
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; 
-    font-size: 28px; 
-    color: grey; 
-}
-.button {
-    display: inline-block; 
-    padding: 10px 20px; 
-    font-size: 16px; 
-    font-weight: bold; 
-    text-align: center;
-    text-decoration: none;
-    background-color:#4a6f3e; 
-    color: white; 
-    border-radius: 7px; 
-}
-.container2{
-    display: flex; 
-    justify-content: space-between;
-    align-items: center; 
-    margin-left: 50%; 
-    margin-right: 50%; 
+      header h1 {
+        text-align: center;
+        margin-bottom: 10px;
+        color: #333;
+      }
 
-}
-.box{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    flex-wrap: wrap;
-}
+      nav ul {
+        text-align: center;
+      }
 
-.img{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 250px;
-    width: 250px;
-    padding: 10px;
-}
+      nav ul li {
+        display: inline;
+        margin-right: 20px;
+      }
 
-.views_date{
-    text-align: center;
-    font-family: 'Courier New', Courier, monospace;
-}
-.pagination-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-left: auto;
-            margin-right: auto;
-            max-width: 800px;
-            padding: 10px 0; 
-        }
-.pagination{
-display: flex;
-align-items: center;
-background: whitesmoke;
-color: #383838;
-padding: 10px 40px;
-border-radius: 6px;
-}
+      nav ul li a {
+        text-decoration: none;
+        color: #555;
+        transition: color 0.3s ease;
+        font-family: sans-serif;
+        font-weight: bold;
+      }
 
-ul{
-    margin: 20px 30px;
-}
+      nav ul li a:hover {
+        color: #333;
+      }
+      .button {
+        display: inline-block;
+        padding: 8px 16px;
+        text-align: center;
+        text-decoration: none;
+        background-color: rgb(244, 248, 244);
+        color: #030303;
+        border-radius: 5px;
+        margin: 5px;
+        box-shadow: 0 0 10px rgba(4, 79, 48, 0.7);
+      }
+      .button:hover {
+        background-color: #ddd;
+      }
 
-ul li{
-    display: inline-block;
-    margin: 0 10px;
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    text-align: center;
-    font-size: 22px;
-    font-weight: 500;
-    line-height: 45px;
-    cursor: pointer;
+      /* Main section styles */
+      .main {
+        padding: 20px 0;
+      }
 
-}
+      .section {
+        padding: 40px 0;
+      }
 
-ul li.active{
-    color:#ccc;
-    background-image: linear-gradient( #4a6f3e,  #4a6f3e);
-    background-repeat: no-repeat;
-}
-.btn1, .btn2{
-    display: inline-flex;
-    align-items: center;
-    font-size: 22px;
-    font-weight: 500;
-    color: 383838;
-    background: transparent;
-    outline: none;
-    border: none;
-    cursor: pointer;
-}
-.btn1 img{
-    width: 24px;
-    margin-right: 15px;
-}
-.btn2 img{
-    width: 24px;
-    margin-left: 15px;
-    transform:rotate(180deg) ;
-}
+      .pet-container,
+      .pet-container2 {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+      }
 
+      .pet {
+        width: 300px; /* Adjust the width as needed */
+        background-color: #fff;
+        border-radius: 5px;
+        padding: 20px;
+        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+        margin-bottom: 20px;
+      }
 
+      .pet img {
+        width: 300px; /* Set a specific width */
+        height: 200px; /* Set a specific height */
+        object-fit: cover; /* Helps maintain aspect ratio and prevents distortion */
+        border-radius: 5px;
+        margin-bottom: 10px;
+      }
 
+      .buttonA {
+        background-color: #404140;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        text-decoration: none;
+      }
 
+      .buttonA:hover {
+        background-color: #cfdbd0;
+      }
 
-
-
-
-
-
-
-
-
-</style>
-</head>
-<body>
+      /* Footer styles */
+      footer {
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        padding: 20px 0;
+      }
+    </style>
+  </head>
+  <body>
     <header>
-        <div class="container">
-            <a href="#" class="logo">PetFinder</a>
-           
-            <a href="join.html" class="button" target="_blank">Join Us</a>
-        </div>
+      <div class="container">
+        <h1>Pets Up for Adoption</h1>
+        <nav>
+          <ul class="button-list">
+            <li><a href="#available-pets" class="button">All</a></li>
+            <li><a href="#how-to-adopt" class="button">Dogs</a></li>
+            <li><a href="#contact-us" class="button">Cats</a></li>
+            <li><a href="#contact-us" class="button">Birds</a></li>
+            <li><a href="#contact-us" class="button">Rabbits</a></li>
+          </ul>
+        </nav>
+      </div>
     </header>
-    <div class="container2">
-        <p>Animal:</p>
-        <select>
-            <option value="All">All</option>
-            <option value="Dog">Dog</option>
-            <option value="Cat">Cat</option>
-            <option value="Pigeon">Pigeon</option>
-            <option value="Rabbit">Rabbit</option>
-            <option value="Mouse">Mouse</option>
-        </select>
-    </div>
 
-    <!DOCTYPE html>
-<html>
-    <head>
-        <title>Document</title>
-        <link rel="stylesheet" href="U1.css">
-    </head>
-    <body>
-        <div class="box">
-            <div class="album">
-                <img src="img/cat1.png" alt="" class="img">
-                <div class="views_date">
-                    <p>aggie</p>
-                    <p>20 Oct 2023</p>
-                </div>
-            </div>
-            <div class="album">
-                <img src="img/cat2.jpg" alt="" class="img">
-                <div class="views_date">
-                    <p>bonnie</p>
-                    <p>22 Oct 2023</p>
-                </div>
-            </div>
-            <div class="album">
-                <img src="img/cat3.webp" alt="" class="img">
-                <div class="views_date">
-                    <p>freya</p>
-                    <p>18 Oct 2022</p>
-                </div>
-            </div>
-            <div class="album">
-                <img src="img/cat4.jpg" alt="photo" class="img">
-                <div class="views_date">
-                    <p>glinda</p>
-                    <p>12 Oct 2023</p>
-                </div>
-            </div>
-            <div class="album">
-                <img src="img/dog1.jpg" alt="photo" class="img">
-                <div class="views_date">
-                    <p>leeki</p>
-                    <p>24 Sep 2020</p>
-                </div>
-            </div>
-            <div class="album">
-                <img src="img/dog2.png" alt="photo" class="img">
-                <div class="views_date">
-                    <p>jinx</p>
-                    <p>21 Sep 2023</p>
-                </div>
-            </div>
-            <div class="album">
-                <img src="img/dog3.webp" alt="photo" class="img">
-                <div class="views_date">
-                    <p>woodoo</p>
-                    <p>18 Sep 2023</p>
-                </div>
-            </div>
-            <div class="album">
-                <img src="img/dog4.webp" alt="photo" class="img">
-                <div class="views_date">
-                    <p>googo</p>
-                    <p>14 Sep 2022</p>
-                </div>
-            </div>
-            <div class="album">
-                <img src="img/peigon1.webp" alt="photo" class="img">
-                <div class="views_date">
-                    <p>Celebration</p>
-                    <p>12 Sep 2023</p>
-                </div>
-            </div><div class="album">
-                <img src="img/peigon2.webp" alt="photo" class="img">
-                <div class="views_date">
-                    <p>Celebration</p>
-                    <p>12 Sep 2023</p>
-                </div>
-            </div><div class="album">
-                <img src="img/peigon3.jpg" alt="photo" class="img">
-                <div class="views_date">
-                    <p>Celebration</p>
-                    <p>12 Sep 2023</p>
-                </div>
-            </div><div class="album">
-                <img src="img/peigon34.jpg" alt="photo" class="img">
-                <div class="views_date">
-                    <p>Celebration</p>
-                    <p>12 Sep 2023</p>
-                </div>
-            </div><div class="album">
-                <img src="img/rabbit1.jpg" alt="photo" class="img">
-                <div class="views_date">
-                    <p>bunny</p>
-                    <p>12 Sep 2023</p>
-                </div>
-            </div><div class="album">
-                <img src="img/rabbit2.jpg" alt="photo" class="img">
-                <div class="views_date">
-                    <p>lilo</p>
-                    <p>12 Sep 2023</p>
-                </div>
-            </div><div class="album">
-                <img src="img/rabbit3jpg.jpg" alt="photo" class="img">
-                <div class="views_date">
-                    <p>ghost</p>
-                    <p>12 Sep 2023</p>
-                </div>
-            </div><div class="album">
-                <img src="img/rabbit34.jpg..webp" alt="photo" class="img">
-                <div class="views_date">
-                    <p>Celeb</p>
-                    <p>12 Sep 2023</p>
-                </div>
-            </div>
+    <main>
+      <section id="available-pets" class="section">
+        <div class="container pet-container">
+          <div class="pet">
+            <img src="img/cat1.jpeg" alt="Pet 1" />
+            <h3>Pet Name</h3>
+            <p>Breed: Breed Name</p>
+            <p>Age: X years</p>
+            <p>Gender: Male/Female</p>
+            <p>
+              Description: Lorem ipsum dolor sit amet, consectetur adipiscing
+              elit. Ut commodo libero quis sapien commodo.
+            </p>
+            <a href="join.html" class="buttonA">Adopt</a>
+          </div>
+          <div class="pet">
+            <img src="img/images.jpeg" alt="Pet 2" />
+            <h3>Pet Name</h3>
+            <p>Breed: Breed Name</p>
+            <p>Age: X years</p>
+            <p>Gender: Male/Female</p>
+            <p>
+              Description: Lorem ipsum dolor sit amet, consectetur adipiscing
+              elit. Ut commodo libero quis sapien commodo.
+            </p>
+            <a href="join.html" class="buttonA">Adopt</a>
+          </div>
+
+          <!-- Add more pets similarly -->
+          <div class="pet">
+            <img src="img/dog3.jpeg" alt="Pet 3" />
+            <h3>Pet Name</h3>
+            <p>Breed: Breed Name</p>
+            <p>Age: X years</p>
+            <p>Gender: Male/Female</p>
+            <p>
+              Description: Lorem ipsum dolor sit amet, consectetur adipiscing
+              elit. Ut commodo libero quis sapien commodo.
+            </p>
+            <a href="join.html" class="buttonA">Adopt</a>
+          </div>
+          <div class="pet">
+            <img src="img/parrot3.jpeg" alt="Pet 4" />
+            <h3>Pet Name</h3>
+            <p>Breed: Breed Name</p>
+            <p>Age: X years</p>
+            <p>Gender: Male/Female</p>
+            <p>
+              Description: Lorem ipsum dolor sit amet, consectetur adipiscing
+              elit. Ut commodo libero quis sapien commodo.
+            </p>
+            <a href="join.html" class="buttonA">Adopt</a>
+          </div>
+
+          <!-- Add more pets similarly -->
         </div>
-        <div class="pagination-container">
-            <div class="pagination">
-                <button class="btn1" onclick="backbtn()"> <img src="img/arrow2.png">prev</button>
-                <ul>
-                    <li class="link active" value="1" onclick="activeLink()">1</li>
-                    <li class="link" value="2" onclick="activeLink()">2</li>
-                    <li class="link" value="3" onclick="activeLink()">3</li>
-                    <li class="link" value="4" onclick="activeLink()">4</li>
-                    <li class="link" value="5" onclick="activeLink()">5</li>
-                    <li class="link" value="6" onclick="activeLink()">6</li>
-                </ul>
-                <button class="btn2" onclick="nextbtn()"> <img src="img/arrow2.png">next</button>
-            </div>
+        <div class="container pet-container2">
+          <div class="pet">
+            <img src="img/dog4.jpeg" alt="Pet 5" />
+            <h3>Pet Name</h3>
+            <p>Breed: Breed Name</p>
+            <p>Age: X years</p>
+            <p>Gender: Male/Female</p>
+            <p>
+              Description: Lorem ipsum dolor sit amet, consectetur adipiscing
+              elit. Ut commodo libero quis sapien commodo.
+            </p>
+            <a href="join.html" class="buttonA">Adopt</a>
+          </div>
+          <div class="pet">
+            <img src="img/rabbit2.jpeg" alt="Pet 6" />
+            <h3>Pet Name</h3>
+            <p>Breed: Breed Name</p>
+            <p>Age: X years</p>
+            <p>Gender: Male/Female</p>
+            <p>
+              Description: Lorem ipsum dolor sit amet, consectetur adipiscing
+              elit. Ut commodo libero quis sapien commodo.
+            </p>
+            <a href="join.html" class="buttonA">Adopt</a>
+          </div>
+          <div class="pet">
+            <img src="img/parrot3.jpeg" alt="Pet 7" />
+            <h3>Pet Name</h3>
+            <p>Breed: Breed Name</p>
+            <p>Age: X years</p>
+            <p>Gender: Male/Female</p>
+            <p>
+              Description: Lorem ipsum dolor sit amet, consectetur adipiscing
+              elit. Ut commodo libero quis sapien commodo.
+            </p>
+            <a href="join.html" class="buttonA">Adopt</a>
+          </div>
+
+          <!-- Add more pets similarly -->
+          <div class="pet">
+            <img src="img/cat2.jpeg" alt="Pet 8" />
+            <h3>Pet Name</h3>
+            <p>Breed: Breed Name</p>
+            <p>Age: X years</p>
+            <p>Gender: Male/Female</p>
+            <p>
+              Description: Lorem ipsum dolor sit amet, consectetur adipiscing
+              elit. Ut commodo libero quis sapien commodo.
+            </p>
+            <a href="join.html" class="buttonA">Adopt</a>
+          </div>
+
+          <!-- Add more pets similarly -->
         </div>
-
-
-        <script>
-        let link = document.getElementsByClassName("link");
-       
-        let currentValue=1;
-        
-        function activeLink(){
-            for(l of link ){
-                l.classList.remove("active");
-            }
-        event.target.classList.add("active");
-        currentValue = event.target.value;
-        }
-
-        function backbtn(){
-        if(currentValue>1){
-            for(l of link ){
-            l.classList.remove("active");
-            }
-            currentValue--;
-            link[currentValue-1].classList.add("active")
-        }
-    }
-    function nextbtn(){
-        if(currentValue<6){
-            for(l of link ){
-            l.classList.remove("active");
-            }
-            currentValue++;
-            link[currentValue-1].classList.add("active")
-        }
-    }
-</script>
-
-
-</body>
+      </section>
+    </main>
+  </body>
 </html>
-
-
-
