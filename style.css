@@ -261,44 +261,63 @@ header {
     }
     
   }
-  footer{
-    background-color: lightgray;
+  footer {
+    background-color: #f0f0f0;
+    padding: 20px;
   }
-.footer{
-  width: 100%;
-  padding: 70px 30px 20 px;
-}
-.contact{
-  display: flex;
-  justify-content: center;
-}
-.contact a{
-  text-decoration: none;
-  padding: 10px;
-  background-color: gainsboro;
-  margin: 10px;
-  border-radius: 50%;
-}
-.contact a img{
-  width: 30px;
-}
-.about{
-  margin: 30px 0;
-}
-.about ul{
-  display: flex;
-  justify-content: center;
-}
-.about ul li a{
-  color: gray;
-  margin: 20px;
-  text-decoration: none;
-}
-.bottom{
-  background-color: #111;
-  padding: 20px;
-  text-align: center;
-}
-.bottom p{
-color: white;
-}
+  
+  .about {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .about ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .about ul li {
+    display: inline-block;
+    margin: 0 15px;
+  }
+  
+  .about ul li a {
+    text-decoration: none;
+    color: #555;
+  }
+  
+  .footer {
+    text-align: center;
+  }
+  
+  .footer h3 {
+    color: #555;
+    font-size: 20px;
+  }
+  
+  .contact {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .contact a {
+    text-decoration: none;
+    padding: 10px;
+    background-color: #ddd;
+    margin: 10px;
+    border-radius: 50%;
+    display: inline-block;
+  }
+  
+  .contact a img {
+    width: 30px;
+  }
+  
+  .bottom {
+    background-color: #464646;
+    text-align: center;
+    color: #555;
+  }
+  
+  
