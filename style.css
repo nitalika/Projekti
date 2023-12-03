@@ -228,15 +228,14 @@ header {
       margin-bottom: 20px;
     }
     
-    .box3,
-{
+    .box3{
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
   margin: 20px;
 }
 
-.review {
+.review{
   width: 300px;
   padding: 20px;
   margin: 10px;
@@ -261,9 +260,9 @@ header {
     }
     
   }
+  /*Footer starts*/
   footer {
-    background-color: #f0f0f0;
-    padding: 20px;
+    background-color: #6d6b6b;
   }
   
   .about {
@@ -273,7 +272,7 @@ header {
   
   .about ul {
     list-style: none;
-    padding: 0;
+    padding: 20px 0;
   }
   
   .about ul li {
@@ -283,7 +282,10 @@ header {
   
   .about ul li a {
     text-decoration: none;
-    color: #555;
+    color: white;
+  }
+  .about ul li a:hover {
+    color: rgb(43, 40, 40);
   }
   
   .footer {
@@ -291,7 +293,7 @@ header {
   }
   
   .footer h3 {
-    color: #555;
+    color:white;
     font-size: 20px;
   }
   
@@ -315,9 +317,9 @@ header {
   }
   
   .bottom {
-    background-color: #464646;
+    background-color: #464444;
     text-align: center;
-    color: #555;
+    color: #f8eaea;
   }
   
   
