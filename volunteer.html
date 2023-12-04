@@ -3,79 +3,20 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <style>
-      body {
-        font-family: "Open Sans", "sans-serif";
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        text-transform: capitalize;
-        transition: all 0.2s linear;
-        background: linear-gradient(120deg, #669966, beige);
-      }
-      .container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 25px;
-        min-height: 100vh;
-        padding-bottom: 70px;
-        font-size: 30px;
-      }
-
-      .container form {
-        padding: 20px;
-        width: 700px;
-        background: rgb(178, 200, 178);
-      }
-
-      .container form .row {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 15px;
-      }
-
-      .container form .row .col {
-        flex: 250px;
-      }
-
-      .container form .row .col .title {
-        font-size: 30px;
-        color: #333;
-        padding-bottom: 15px;
-        margin-bottom: 20px;
-      }
-
-      .container form .row .col .title .inputbox,
-      input {
-        font-size: 30px;
-      }
-      .container form .row .col .inputbox span {
-        display: block;
-      }
-
-      .container form .row .col .inputbox textarea {
-        width: 40%;
-        padding: 30px;
-        resize: vertical;
-      }
-
-      .container form .row .col .experience {
-        margin-bottom: 15px;
-      }
-
-      .container form .row .col .select select {
-        flex: 1;
-        font-size: 20px;
-        padding: 10px;
-        margin-top: 5px;
-      }
-    </style>
+    <link rel="stylesheet" href="sign.css">
   </head>
   <body>
     <div class="container">
+      <div class="info">
+        <h2>Help Us Make a Difference <img src="img/donate.png" alt="" /></h2>
+        <p>
+        "diqka"
+        </p>
+        <p>Join...</p>
+      </div>
+
       <form action="">
+
         <div class="row">
           <div class="col">
             <h3 class="title">PERSONAL INFORMATION</h3>
@@ -111,13 +52,13 @@
             <div class="select">
               <span>City:</span>
               <select>
-                <option value="Prishtina">Prishtin</option>
-                <option value="Peja">Pej</option>
-                <option value="Mitrovica">Mitrovic</option>
-                <option value="Gjilani">Gjilan</option>
-                <option value="Gjakova">Gjakova</option>
-                <option value="Rahoveci">Rahoveci</option>
                 <option value="Ferizaji">Ferizaji</option>
+                <option value="Gjilani">Gjilani</option>
+                <option value="Gjakova">Gjakova</option>
+                <option value="Mitrovica">Mitrovica</option>
+                <option value="Prishtina">Prishtina</option>
+                <option value="Peja">Peja</option>
+                <option value="Rahoveci">Rahoveci</option>
               </select>
             </div>
             <div class="inputbox">
@@ -131,9 +72,9 @@
             <div class="row experience">
               <label class="experience">experience with pets:</label>
               <input type="radio" name="answer" />
-              <label for="Yes">Yes</label>
+              <label for="Yes">yes</label>
               <input type="radio" name="answer" />
-              <label for="No">No</label>
+              <label for="No">no</label>
             </div>
 
             <div class="inputbox">
