@@ -1,45 +1,23 @@
+function validateForm() {
+    var firstName = document.getElementById('firstName').value;
+    var nameError = document.getElementById('nameError');
 
-document.addEventListener('DOMContentLoaded', function () {
-    const signUpForm = document.getElementById('signup-form');
-    const loginForm = document.getElementById('login-form');
-    const donationForm = document.getElementById('donation-form');
+    nameError.innerHTML = '';
 
-    if (signUpForm) {
-        signUpForm.addEventListener('submit', function (event) {
-            event.preventDefault();
-            validateSignUpForm();
-        });
+    if (firstName.trim() === '') {
+        nameError.innerHTML = 'Name cannot be empty.';
+        return false;
     }
 
-    if (loginForm) {
-        loginForm.addEventListener('submit', function (event) {
-            event.preventDefault();
-            validateLoginForm();
-        });
+    if (!/^[a-zA-Z]+$/.test(firstName)) {
+        nameError.innerHTML = 'Name should only contain letters.';
+        return false;
     }
 
-    if (donationForm) {
-        donationForm.addEventListener('submit', function (event) {
-            event.preventDefault();
-            validateDonationForm();
-        });
+    if (firstName.length < 3 || firstName.length > 12) {
+        nameError.innerHTML = 'Name should be between 3 and 12 characters.';
+        return false;
     }
 
-    function validateSignUpForm() {
-
-
-        console.log('Validating Sign Up Form');
-    }
-
-    function validateLoginForm() {
-
-
-        console.log('Validating Login Form');
-    }
-
-    function validateDonationForm() {
-
-
-        console.log('Validating Donation Form');
-    }
-});
+    return true;
+}
