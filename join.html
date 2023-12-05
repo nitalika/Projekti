@@ -14,9 +14,9 @@
             <p>By creating an account on PetFinder, you're joining a community that celebrates the joy and love that animals bring to our lives. Your account symbolizes your commitment to creating happy homes for pets in need.
             </p>
             <p>Join our community</p>
-          </div>
+        </div>
           
-        <form id="form" onsubmit="return validateForm()">
+        <form id="form">
             <div class="row">
                 <div class="col">
                     <h3 class="title">Sign up</h3>
@@ -29,29 +29,33 @@
 
                     <div class="inputbox">
                         <span>Last Name:</span>
-                        <input type="text">
+                        <input type="text" id="lastName">
+                        <p id="lastNameError" class="error"></p>
                     </div>
 
                     <div class="inputbox">
                         <span>Email:</span>
-                        <input type="email">
+                        <input type="email" id="email">
+                        <p id="emailError" class="error"></p>
                     </div>
 
                     <div class="inputbox">
                         <span>Password:</span>
-                        <input type="password">
+                        <input type="password" id="password">
+                        <p id="passwordError" class="error"></p>
                     </div>
 
                     <div class="inputbox">
                         <span>Confirm Password:</span>
-                        <input type="password">
+                        <input type="password" id="confirmPassword">
+                        <p id="confirmPasswordError" class="error"></p>
                     </div>
                 </div>
             </div>
-            <input type="submit" value="Sign up" class="submit-btn">    <p class="par2">Already have an account? <a href="login.html">Login here</a></p>
+            <input type="submit" value="Sign up" class="submit-btn">
+            <p class="par2">Already have an account? <a href="login.html">Login here</a></p>
 
         </form>
     </div>
-    
 </body>
 </html>

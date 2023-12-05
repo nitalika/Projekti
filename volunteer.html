@@ -1,88 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="sign.css">
-  </head>
-  <body>
-    <div class="container">
-      <div class="info">
-        <h2>Join Our Pet Adoption Forum <br>Volunteer Team!<img src="img/donate.png" alt="" /></h2>
-        <p>Are you passionate about animals and committed to making a positive impact in their lives? If so, we invite you to become a vital part of our Pet Adoption Forum Volunteer Team!...</p>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="sign.css">
+  <script src="validation.js" defer></script>
+</head>
+<body>
+  <div class="container">
+    <div class="info">
+      <h2>Join Our Pet Adoption Forum Volunteer Team!<img src="img/donate.png" alt="" /></h2>
+      <p>Are you passionate about animals and committed to making a positive impact in their lives? If so, we invite you to become a vital part of our Pet Adoption Forum Volunteer Team!...</p>
       <p>Together, we can make a difference. Your generosity matters.</p>
-      </div>
+    </div>
 
-      <form action="">
+    <form id="form" onsubmit="return validateForm()">
+      <div class="row">
+        <div class="col">
+          <h3 class="title">PERSONAL INFORMATION</h3>
 
-        <div class="row">
-          <div class="col">
-            <h3 class="title">PERSONAL INFORMATION</h3>
+          <div class="inputbox">
+            <span>First Name:</span>
+            <input type="text" id="firstName">
+            <p id="nameError" class="error"></p>
+          </div>
 
-            <div class="inputbox">
-              <span>Name:</span>
-              <input type="text" />
-            </div>
+          <div class="inputbox">
+            <span>Date of birth</span>
+            <input type="date" />
+          </div>
 
-            <div class="inputbox">
-              <span>Date of birth</span>
-              <input type="date" />
-            </div>
+          <div class="row gender-inputs">
+            <label class="gender-label">Gender:</label>
+            <input type="radio" name="Gjinia" />
+            <label for="male">Male</label>
+            <input type="radio" name="Gjinia" />
+            <label for="female">Female</label>
+          </div>
 
-            <div class="row gender-inputs">
-              <label class="gender-label">Gender:</label>
-              <input type="radio" name="Gjinia" />
-              <label for="male">Male</label>
-              <input type="radio" name="Gjinia" />
-              <label for="female">Female</label>
-            </div>
+          <div class="inputbox">
+            <span>Email:</span>
+            <input type="email" />
+          </div>
 
-            <div class="inputbox">
-              <span>Email:</span>
-              <input type="email" />
-            </div>
+          <div class="inputbox">
+            <span>Phone Number:</span>
+            <input type="tel" />
+          </div>
 
-            <div class="inputbox">
-              <span>Phone Number:</span>
-              <input type="tel" />
-            </div>
+          <div class="select">
+            <span>City:</span>
+            <select>
+              <option value="Ferizaji">Ferizaji</option>
+              <option value="Gjilani">Gjilani</option>
+              <option value="Gjakova">Gjakova</option>
+              <option value="Mitrovica">Mitrovica</option>
+              <option value="Prishtina">Prishtina</option>
+              <option value="Peja">Peja</option>
+              <option value="Rahoveci">Rahoveci</option>
+            </select>
+          </div>
 
-            <div class="select">
-              <span>City:</span>
-              <select>
-                <option value="Ferizaji">Ferizaji</option>
-                <option value="Gjilani">Gjilani</option>
-                <option value="Gjakova">Gjakova</option>
-                <option value="Mitrovica">Mitrovica</option>
-                <option value="Prishtina">Prishtina</option>
-                <option value="Peja">Peja</option>
-                <option value="Rahoveci">Rahoveci</option>
-              </select>
-            </div>
-            <div class="inputbox">
-              <label class="license-label">Driver's license:</label>
-              <input type="radio" name="prgj" />
-              <label for="yes">yes</label>
-              <input type="radio" name="prgj" />
-              <label for="no">no</label>
-            </div>
+          <div class="inputbox">
+            <label class="license-label">Driver's license:</label>
+            <input type="radio" name="prgj" />
+            <label for="yes">yes</label>
+            <input type="radio" name="prgj" />
+            <label for="no">no</label>
+          </div>
 
-            <div class="row experience">
-              <label class="experience">experience with pets:</label>
-              <input type="radio" name="answer" />
-              <label for="Yes">yes</label>
-              <input type="radio" name="answer" />
-              <label for="No">no</label>
-            </div>
+          <div class="row experience">
+            <label class="experience">experience with pets:</label>
+            <input type="radio" name="answer" />
+            <label for="Yes">yes</label>
+            <input type="radio" name="answer" />
+            <label for="No">no</label>
+          </div>
 
-            <div class="inputbox">
-              <span>Skills and preferences:</span>
-              <textarea></textarea>
-            </div>
+          <div class="inputbox">
+            <span>Skills and preferences:</span>
+            <textarea></textarea>
           </div>
         </div>
-        <input type="submit" value="Voulenteer" class="submit-btn" />
-      </form>
-    </div>
-  </body>
+      </div>
+      <input type="submit" value="Volunteer" class="submit-btn" />
+    </form>
+  </div>
+</body>
 </html>

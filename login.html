@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="sign.css" />
+    <script src="validation.js" defer></script>
 </head>
 <body>
     <div class="container">
@@ -14,31 +15,26 @@
             "diqka"
             </p>
             <p>Join...</p>
-          </div>
-    <form action="">
-        
-        <div class="row">
-            <div class="col">
-            <h3 class="title">Log in</h1>
-        <div class="inputbox">
-            <span>Email:</span>
-            <input type="email">
         </div>
-
-        <div class="inputbox">
-            <span>Password:</span>
-            <input type="password">
-        </div>
-
-        <div class="inputbox">
-            <span>Confirm Password:</span>
-            <input type="password">
-        </div>
-    </div>
-    </div>
-<input type="submit" value="Sign up" class="submit-btn">             <p class="par2">Dont have an account? <a href="join.html">Sign up here</a></p>
-
-    </form>
+        <form id="form">
+            <div class="row">
+                <div class="col">
+                    <h3 class="title">Log in</h3>
+                    <div class="inputbox">
+                        <span>Email:</span>
+                        <input type="email" id="email">
+                        <p id="emailError" class="error"></p>
+                    </div>        
+                    <div class="inputbox">
+                        <span>Password:</span>
+                        <input type="password" id="password">
+                        <p id="passwordError" class="error"></p>
+                    </div>
+                </div>
+            </div>
+            <input type="button" value="Sign up" class="submit-btn" onclick="validateLogin()">             
+            <p class="par2">Dont have an account? <a href="join.html">Sign up here</a></p>
+        </form>
     </div>
 </body>
 </html>

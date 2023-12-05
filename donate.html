@@ -4,6 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="sign.css" />
+    
+    <script src="validation.js" defer></script>
+
   </head>
 
   <body>
@@ -22,21 +25,23 @@
         <p>Together, we can make a difference. Your generosity matters.</p>
       </div>
 
-      <form action="">
-        
+      <form id="form">   
+             
         <div class="row">
           <div class="col">
             <h3 class="title">Personal information</h3>
 
             <div class="inputbox">
               <span>Name:</span>
-              <input type="text" />
-            </div>
+              <input type="text" id="firstName">
+              <p id="nameError" class="error"></p>
+          </div>
 
-            <div class="inputbox">
-              <span>Email:</span>
-              <input type="email" />
-            </div>
+          <div class="inputbox">
+            <span>Email:</span>
+            <input type="email" id="email">
+            <p id="emailError" class="error"></p>
+        </div>
 
             <div class="inputbox">
               <span>Address:</span>
