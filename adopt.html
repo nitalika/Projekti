@@ -1,250 +1,282 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pets Up for Adoption</title>
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        line-height: 1.6;
-        background-color: #f7f7f7;
-        color: #333;
-      }
 
-      .container {
-        width: 100%;
-        margin: 0 auto;
-        overflow: hidden;
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pets Up for Adoption</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      background-color: #f7f7f7;
+      color: #333;
+    }
 
-      header {
-        background-color: rgb(162, 201, 162);
-        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-        padding: 20px 0;
-      }
+    header {
+      background-color: rgb(162, 201, 162);
+      box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+      padding: 20px 0;
+    }
 
-      header h1 {
-        text-align: center;
-        margin-bottom: 10px;
-        color: #333;
-      }
+    header h1 {
+      text-align: center;
+      margin-bottom: 10px;
+      color: #333;
+    }
 
-      nav ul {
-        text-align: center;
-      }
+    nav ul {
+      text-align: center;
+    }
 
-      nav ul li {
-        display: inline;
-        margin-right: 20px;
-      }
+    nav ul li {
+      display: inline;
+      margin-right: 20px;
+    }
 
-      nav ul li a {
-        text-decoration: none;
-        color: #555;
-        transition: color 0.3s ease;
-        font-family: sans-serif;
-        font-weight: bold;
-      }
+    nav ul li a {
+      text-decoration: none;
+      color: #555;
+      transition: color 0.3s ease;
+      font-family: sans-serif;
+      font-weight: bold;
+    }
 
-      nav ul li a:hover {
-        color: #333;
-      }
-      .button {
-        display: inline-block;
-        padding: 8px 16px;
-        text-align: center;
-        text-decoration: none;
-        background-color: rgb(244, 248, 244);
-        color: #030303;
-        border-radius: 5px;
-        margin: 5px;
-        box-shadow: 0 0 10px rgba(4, 79, 48, 0.7);
-      }
-      .button:hover {
-        background-color: #ddd;
-      }
+    nav ul li a:hover {
+      color: #333;
+    }
 
-      .main {
-        padding: 20px 0;
-      }
+    .button {
+      display: inline-block;
+      padding: 8px 16px;
+      text-align: center;
+      text-decoration: none;
+      background-color: rgb(244, 248, 244);
+      color: #030303;
+      border-radius: 5px;
+      margin: 5px;
+      box-shadow: 0 0 10px rgba(4, 79, 48, 0.7);
+    }
 
-      .section {
-        padding: 40px 0;
-      }
+    .button:hover {
+      background-color: #ddd;
+    }
 
-      .pet-container,
-      .pet-container2 {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
-      }
+    .section {
+      padding: 40px 0;
+    }
 
-      .pet {
-        width: 300px; 
-        background-color: #fff;
-        border-radius: 5px;
-        padding: 20px;
-        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-        margin-bottom: 20px;
-      }
+    .pet-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
 
-      .pet img {
-        width: 300px; 
-        height: 200px;
-        object-fit: cover; 
-        border-radius: 5px;
-        margin-bottom: 10px;
-      }
+    .pet {
+      width: 300px;
+      background-color: #fff;
+      border-radius: 5px;
+      padding: 20px;
+      box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+    }
 
-      .buttonA {
-        background-color: #404140;
-        color: white;
-        padding: 10px 20px;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-        text-decoration: none;
-      }
+    .pet img {
+      width: 300px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 5px;
+      margin-bottom: 10px;
+    }
 
-      .buttonA:hover {
-        background-color: #cfdbd0;
-      }
+    .buttonA {
+      background-color: #404140;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      text-decoration: none;
+    }
 
-      footer {
-        background-color: #333;
-        color: #fff;
-        text-align: center;
-        padding: 20px 0;
-      }
-    </style>
-  </head>
-  <body>
-    <header>
-      <div class="container">
-        <h1>Pets Up for Adoption</h1>
-        <nav>
-          <ul class="button-list">
-            <li><a href="#available-pets" class="button">All</a></li>
-            <li><a href="#how-to-adopt" class="button">Dogs</a></li>
-            <li><a href="#contact-us" class="button">Cats</a></li>
-            <li><a href="#contact-us" class="button">Birds</a></li>
-            <li><a href="#contact-us" class="button">Rabbits</a></li>
-          </ul>
-        </nav>
+    .buttonA:hover {
+      background-color: #cfdbd0;
+    }
+
+    footer {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 1px ;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <h1>Pets Up for Adoption</h1>
+      <nav>
+        <ul class="button-list">
+          <li><a href="#available-pets" class="button">All</a></li>
+          <li><a href="#how-to-adopt" class="button">Dogs</a></li>
+          <li><a href="#contact-us" class="button">Cats</a></li>
+          <li><a href="#contact-us" class="button">Birds</a></li>
+          <li><a href="#contact-us" class="button">Rabbits</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="available-pets" class="section">
+      <div class="container pet-container">
+        <div class="pet">
+          <img src="img/cat1.jpeg" alt="Pet 1" />
+          <h3>Luna</h3>
+          <p>Breed: Chartreux</p>
+          <p>Age: 1 year</p>
+          <p>Gender: Female</p>
+          <p>Description: Meet Luna, a captivating cat with eyes that gleam like precious gems. Luna is a curious explorer, always on the lookout for hidden treasures in every nook and cranny. With a personality as mysterious as her name suggests, Luna is ready to add a touch of magic to your home.</p>
+          <a href="join.html" class="buttonA">Adopt</a>
+        </div>
+        <div class="pet">
+          <img src="img/cat2.jpeg" alt="Pet 2" />
+          <h3>Whisk</h3>
+          <p>Breed: Domestic Shorthair</p>
+          <p>Age: 4 months</p>
+          <p>Gender: Male</p>
+          <p>Description: Whisk is the embodiment of joy and playfulness. His lively spirit and contagious energy make every day an adventure. Whisk's favorite pastime is chasing feather toys and pouncing on imaginary prey. If you're looking for a dynamic companion to bring laughter and fun into your life, Whisk is the cat for you</p>          <a href="join.html" class="buttonA">Adopt</a>
+        </div>
+        <div class="pet">
+          <img src="img/cat3.jpeg" alt="Pet 3" />
+          <h3>Misty</h3>
+          <p>Breed: Domestic Shorthair </p>
+          <p>Age: 2 years</p>
+          <p>Gender: Female</p>
+          <p>Description: Misty is the epitome of feline elegance. She enjoys lounging in sunlit spots, casting a sophisticated silhouette against the backdrop of your home. Misty is a gentle soul, seeking a serene and loving environment where she can share quiet moments with her forever family.</p>
+          <a href="join.html" class="buttonA">Adopt</a>
+        </div>
+        <div class="pet">
+          <img src="img/cat4.jpeg" alt="Pet 4" />
+          <h3>Paws</h3>
+          <p>Breed: Persian</p>
+          <p>Age: 4 months</p>
+          <p>Gender: Female</p>
+          <p>Description: Paws, with her charming personality and sociable nature, is a true social butterfly. Paws is an expert in stealing hearts with her endearing purrs and affectionate nudges. If you're looking for a companion who thrives on companionship, Paws is your match..</p>
+          <a href="join.html" class="buttonA">Adopt</a>
+        </div>
+        <div class="pet">
+          <img src="img/dog1.jpeg" alt="Pet 5" />
+          <h3>Rocky</h3>
+          <p>Breed: Rough Collie</p>
+          <p>Age: 1 year</p>
+          <p>Gender: Male</p>
+          <p>Description:Rocky is a spirited canine companion who's always up for an adventure. He is the perfect partner for outdoor activities. Rocky is ready to bring excitement and joy into your life.</p>
+          <a href="join.html" class="buttonA">Adopt</a>
+        </div>
+        <div class="pet">
+          <img src="img/dog2.jpeg" alt="Pet 6" />
+          <h3>Bella and ben</h3>
+          <p>Breed: Sheltie</p>
+          <p>Age: 1 year</p>
+          <p>Gender: Male and Female</p>
+          <p>Description: Bella and Ben are a sweet-natured dogs with a big heart. Their gentle demeanor and affectionate nature make them the ideal cuddle buddies. Bella and Ben are eager to show their future family unconditional love.</p>
+          <a href="join.html" class="buttonA">Adopt</a>
+        </div>
+        <div class="pet">
+          <img src="img/dog3.jpeg" alt="Pet 7" />
+          <h3>Daisy</h3>
+          <p>Breed: Labrador Retriever</p>
+          <p>Age: 1 years</p>
+          <p>Gender: Female</p>
+          <p>Description: Daisy is a bundle of joy and playfulness. With a heart as big as her playful spirit. If you're looking for a dog with infectious enthusiasm and a playful attitude, Daisy is the perfect addition to your family</p>
+          <a href="join.html" class="buttonA">Adopt</a>
+        </div>
+        <div class="pet">
+          <img src="img/dog4.jpeg" alt="Pet 8" />
+          <h3>Max</h3>
+          <p>Breed: Maltese Dog</p>
+          <p>Age: 2 years</p>
+          <p>Gender: Male</p>
+          <p>Description: Max is a loyal and devoted dog, always ready to stand by your side, excellent companion for those seeking a faithful friend. Max enjoys both playtime and relaxing moments, ensuring a perfect blend of companionship for any lifestyle.</p>
+          <a href="join.html" class="buttonA">Adopt</a>
+        </div><div class="pet">
+          <img src="img/parrot1.jpeg" alt="Pet 8" />
+          <h3>Finn</h3>
+          <p>Breed: Parrot</p>
+          <p>Age: 2 years</p>
+          <p>Gender: Male</p>
+          <p>Description: Finn can mimic a variety of sounds, from doorbells to musical tunes. Emerald is the perfect parrot for those who appreciate a touch of elegance and entertainment.</p>
+          <a href="join.html" class="buttonA">Adopt</a>
+        </div>
+        <div class="pet">
+          <img src="img/parrot2.jpeg" alt="Pet 8" />
+          <h3>Cobalt</h3>
+          <p>Breed: parrot</p>
+          <p>Age: 1 year</p>
+          <p>Gender: Male</p>
+          <p>Description:Cobalt is known as the mimic master, he can replicate a wide range of sounds with remarkable precision. From ringing phones to laughter, he's talent for mimicry adds amusement to any household.</p>
+          <a href="join.html" class="buttonA">Adopt</a>
+        </div><div class="pet">
+          <img src="img/parrot3.jpeg" alt="Pet 8" />
+          <h3>Mango</h3>
+          <p>Breed: Parrot</p>
+          <p>Age: 1 year</p>
+          <p>Gender: Female</p>
+          <p>Description: Mango, a colorful parrot. She's a brilliant conversationalist. With a vibrant personality and a love for socializing, Mango is ready to add a burst of color and joy to your home.</p>
+          <a href="join.html" class="buttonA">Adopt</a>
+        </div><div class="pet">
+          <img src="img/parrot4.jpeg" alt="Pet 8" />
+          <h3>Sunshine</h3>
+          <p>Breed: parrot</p>
+          <p>Age: 1 year</p>
+          <p>Gender: Female</p>
+          <p>Description: Sunshine is a parrot with feathers that glow like the sun's rays. Sunshine is not only a visual delight but also a melodious performer. Sunshine is ready to serenade your home with a radiant and uplifting melody.</p>
+          <a href="join.html" class="buttonA">Adopt</a>
+        </div><div class="pet">
+          <img src="img/rabbit1.jpeg" alt="Pet 8" />
+          <h3>Thumper</h3>
+          <p>Breed: Rabbit</p>
+          <p>Age: 5 months</p>
+          <p>Gender: Male</p>
+          <p>Description: Thumper is a playful and energetic companion who loves exploring his surroundings. With soft fur and an inquisitive nose, Thumper is ready to bring happiness to your home.</p>
+          <a href="join.html" class="buttonA">Adopt</a>
+        </div><div class="pet">
+          <img src="img/rabbit2.jpeg" alt="Pet 8" />
+          <h3>Clover</h3>
+          <p>Breed: Rabbit</p>
+          <p>Age: 1 year</p>
+          <p>Gender: Female</p>
+          <p>Description: Clover is a gentle rabbit, always ready for a cozy snuggle. Clover enjoys quiet moments. If you're looking for a pet to share peaceful evenings with, Clover is the perfect pet for you.</p>
+          <a href="join.html" class="buttonA">Adopt</a>
+        </div><div class="pet">
+          <img src="img/rabbit3.jpeg" alt="Pet 8" />
+          <h3>Lorem</h3>
+          <p>Breed: Rabbit</p>
+          <p>Age: 2 years</p>
+          <p>Gender: Female</p>
+          <p>Description: Lorem's a curious and adventurous rabbit with a nose for discovery. Lorem is seeking a loving family ready to embark on exciting bunny adventures together.</p>
+          <a href="join.html" class="buttonA">Adopt</a>
+        </div><div class="pet">
+          <img src="img/rabbit4.jpeg" alt="Pet 8" />
+          <h3>Hazel</h3>
+          <p>Breed: Rabbit</p>
+          <p>Age: 1 year</p>
+          <p>Gender: Male</p>
+          <p>Description: Hazel is a gentle rabbit. She enjoys exploring the world around her, Hazel is the perfect companion for those who appreciate the gentle presence of a furry friend.</p>
+          <a href="join.html" class="buttonA">Adopt</a>
+        </div>
       </div>
-    </header>
+    </section>
+  </main>
 
-    <main>
-      <section id="available-pets" class="section">
-        <div class="container pet-container">
-          <div class="pet">
-            <img src="img/cat1.jpeg" alt="Pet 1" />
-            <h3>Pet Name</h3>
-            <p>Breed: Breed Name</p>
-            <p>Age: X years</p>
-            <p>Gender: Male/Female</p>
-            <p>
-              Description: Lorem ipsum dolor sit amet, consectetur adipiscing
-              elit. Ut commodo libero quis sapien commodo.
-            </p>
-            <a href="join.html" class="buttonA">Adopt</a>
-          </div>
-          <div class="pet">
-            <img src="img/images.jpeg" alt="Pet 2" />
-            <h3>Pet Name</h3>
-            <p>Breed: Breed Name</p>
-            <p>Age: X years</p>
-            <p>Gender: Male/Female</p>
-            <p>
-              Description: Lorem ipsum dolor sit amet, consectetur adipiscing
-              elit. Ut commodo libero quis sapien commodo.
-            </p>
-            <a href="join.html" class="buttonA">Adopt</a>
-          </div>
+  <footer>
+    <p>&copy; 2023 Pets Up for Adoption</p>
+  </footer>
+</body>
 
-          <div class="pet">
-            <img src="img/dog3.jpeg" alt="Pet 3" />
-            <h3>Pet Name</h3>
-            <p>Breed: Breed Name</p>
-            <p>Age: X years</p>
-            <p>Gender: Male/Female</p>
-            <p>
-              Description: Lorem ipsum dolor sit amet, consectetur adipiscing
-              elit. Ut commodo libero quis sapien commodo.
-            </p>
-            <a href="join.html" class="buttonA">Adopt</a>
-          </div>
-          <div class="pet">
-            <img src="img/parrot3.jpeg" alt="Pet 4" />
-            <h3>Pet Name</h3>
-            <p>Breed: Breed Name</p>
-            <p>Age: X years</p>
-            <p>Gender: Male/Female</p>
-            <p>
-              Description: Lorem ipsum dolor sit amet, consectetur adipiscing
-              elit. Ut commodo libero quis sapien commodo.
-            </p>
-            <a href="join.html" class="buttonA">Adopt</a>
-          </div>
-
-        </div>
-        <div class="container pet-container2">
-          <div class="pet">
-            <img src="img/dog4.jpeg" alt="Pet 5" />
-            <h3>Pet Name</h3>
-            <p>Breed: Breed Name</p>
-            <p>Age: X years</p>
-            <p>Gender: Male/Female</p>
-            <p>
-              Description: Lorem ipsum dolor sit amet, consectetur adipiscing
-              elit. Ut commodo libero quis sapien commodo.
-            </p>
-            <a href="join.html" class="buttonA">Adopt</a>
-          </div>
-          <div class="pet">
-            <img src="img/rabbit2.jpeg" alt="Pet 6" />
-            <h3>Pet Name</h3>
-            <p>Breed: Breed Name</p>
-            <p>Age: X years</p>
-            <p>Gender: Male/Female</p>
-            <p>
-              Description: Lorem ipsum dolor sit amet, consectetur adipiscing
-              elit. Ut commodo libero quis sapien commodo.
-            </p>
-            <a href="join.html" class="buttonA">Adopt</a>
-          </div>
-          <div class="pet">
-            <img src="img/parrot3.jpeg" alt="Pet 7" />
-            <h3>Pet Name</h3>
-            <p>Breed: Breed Name</p>
-            <p>Age: X years</p>
-            <p>Gender: Male/Female</p>
-            <p>
-              Description: Lorem ipsum dolor sit amet, consectetur adipiscing
-              elit. Ut commodo libero quis sapien commodo.
-            </p>
-            <a href="join.html" class="buttonA">Adopt</a>
-          </div>
-
-          <div class="pet">
-            <img src="img/cat2.jpeg" alt="Pet 8" />
-            <h3>Pet Name</h3>
-            <p>Breed: Breed Name</p>
-            <p>Age: X years</p>
-            <p>Gender: Male/Female</p>
-            <p>
-              Description: Lorem ipsum dolor sit amet, consectetur adipiscing
-              elit. Ut commodo libero quis sapien commodo.
-            </p>
-            <a href="join.html" class="buttonA">Adopt</a>
-          </div>
-
-        </div>
-      </section>
-    </main>
-  </body>
 </html>
