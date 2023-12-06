@@ -1,107 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Donate</title>
     <link rel="stylesheet" href="sign.css" />
-    
     <script src="validation.js" defer></script>
+</head>
 
-  </head>
-
-  <body>
+<body>
     <div class="container">
-      <div class="info">
-        <h2>Help Us Make a Difference <img src="img/donate.png" alt="" /></h2>
-        <p>
-          "Your contribution can make a profound difference in the lives of
-          countless animals awaiting care and loving homes. By donating to our
-          cause, you're providing essential support for shelter, medical care,
-          nourishment, and ultimately, the chance for these animals to find
-          happiness in a forever home. Every donation, no matter the size, helps
-          us continue our mission of providing hope, care, and a second chance
-          to these beloved companions."
-        </p>
-        <p>Together, we can make a difference. Your generosity matters.</p>
-      </div>
-
-      <form id="form">   
-             
-        <div class="row">
-          <div class="col">
-            <h3 class="title">Personal information</h3>
-
-            <div class="inputbox">
-              <span>Name:</span>
-              <input type="text" id="firstName">
-              <p id="nameError" class="error"></p>
-          </div>
-
-          <div class="inputbox">
-            <span>Email:</span>
-            <input type="email" id="email">
-            <p id="emailError" class="error"></p>
+        <div class="info">
+            <h2>Help Us Make a Difference <img src="img/donate.png" alt="" /></h2>
+            <p>
+                "Your contribution can make a profound difference in the lives of countless animals awaiting care and loving homes. By donating to our cause, you're providing essential support for shelter, medical care, nourishment, and ultimately, the chance for these animals to find happiness in a forever home. Every donation, no matter the size, helps us continue our mission of providing hope, care, and a second chance to these beloved companions."
+            </p>
+            <p>Together, we can make a difference. Your generosity matters.</p>
         </div>
 
-            <div class="inputbox">
-              <span>Address:</span>
-              <input type="text" />
-            </div>
+        <form id="form" onsubmit="validateDonate(event)">
+            <div class="row">
+                <div class="col">
+                    <h3 class="title">Personal information</h3>
 
-            <div class="inputbox">
-              <span>City:</span>
-              <input type="text" />
-            </div>
+                    <div class="inputbox">
+                        <span>Name:</span>
+                        <input type="text" id="firstName">
+                        <p id="nameError" class="error"></p>
+                    </div>
 
-            <div class="inputbox">
-              <span>State:</span>
-              <input type="select" />
-            </div>
+                    <div class="inputbox">
+                        <span>Email:</span>
+                        <input type="email" id="donateEmail">
+                        <p id="emailError" class="error"></p>
+                    </div>
 
-            <div class="inputbox">
-              <span>Zip Code:</span>
-              <input type="text" />
-            </div>
-          </div>
+                    <div class="inputbox">
+                        <span>Address:</span>
+                        <input type="text" />
+                    </div>
 
-          <div class="col">
-            <h3 class="title">Donation</h3>
+                    <div class="inputbox">
+                        <span>City:</span>
+                        <input type="text" />
+                    </div>
 
-            <div class="inputbox">
-              <span>Cards accepted :</span>
-              <img src="img/s-l1600.jpg" alt="cards" width="150px" />
-            </div>
+                    <div class="inputbox">
+                        <span>State:</span>
+                        <input type="select" />
+                    </div>
 
-            <div class="inputbox">
-              <span>Name on card:</span>
-              <input type="text" />
-            </div>
+                    <div class="inputbox">
+                        <span>Zip Code:</span>
+                        <input type="text" />
+                    </div>
+                </div>
 
-            <div class="inputbox">
-              <span>Credit card number:</span>
-              <input type="text" />
-            </div>
+                <div class="col">
+                    <h3 class="title">Donation</h3>
 
-            <div class="inputbox">
-              <span>exp month:</span>
-              <input type="text" />
-            </div>
+                    <div class="inputbox">
+                        <span>Cards accepted :</span>
+                        <img src="img/s-l1600.jpg" alt="cards" width="150px" />
+                    </div>
 
-            <div class="inputbox">
-              <span>exp year:</span>
-              <input type="number" />
-            </div>
+                    <div class="inputbox">
+                        <span>Name on card:</span>
+                        <input type="text" />
+                    </div>
 
-            <div class="inputbox">
-              <span>CVV:</span>
-              <input type="text" />
+                    <div class="inputbox">
+                        <span>Credit card number:</span>
+                        <input type="text" />
+                    </div>
+
+                    <div class="inputbox">
+                        <span>exp month:</span>
+                        <input type="text" />
+                    </div>
+
+                    <div class="inputbox">
+                        <span>exp year:</span>
+                        <input type="number" />
+                    </div>
+
+                    <div class="inputbox">
+                        <span>CVV:</span>
+                        <input type="text" />
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
-        <input type="submit" value="donate" class="submit-btn" />
-      </form>
+            <input type="submit" value="donate" class="submit-btn"/>
+        </form>
     </div>
-  </body>
+</body>
 </html>
-
-

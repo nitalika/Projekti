@@ -4,8 +4,9 @@ document.getElementById('form').addEventListener('submit', function(event) {
     var isValidEmail = validateEmail();
     var isValidPassword = validatePassword();
     var isValidConfirmPassword = validateConfirmPassword();
+    var isValidPhoneNr = validatePhoneNr();
 
-    if (!isValidName || !isValidEmail || !isValidPassword || !isValidConfirmPassword) {
+    if (!isValidName || !isValidLname|| !isValidEmail || !isValidPassword || !isValidConfirmPassword || !isValidPhoneNr) {
         event.preventDefault();
     }
 });
@@ -130,3 +131,38 @@ function validateLogin() {
         document.getElementById('form').submit();
     }
 }
+
+
+
+
+function validatePhoneNr() {
+    var phoneNr = document.getElementById('phoneNr').value;
+    var phoneNrError = document.getElementById('phoneNrError');
+
+    phoneNrError.innerHTML = '';
+
+    if (phoneNr.trim() === '') {
+        phoneNrError.innerHTML = 'phone number cannot be empty.';
+        return false;
+    }
+    
+    if (!/^\d+$/.test(phoneNr)) {
+        phoneNrError.innerHTML = 'phone number should only contain numbers.';
+        return false;
+    }
+    
+    if (phoneNr.length < 9 || phoneNr.length > 16) {
+        phoneNrError.innerHTML = 'phone number should be between 9 and 16 characters.';
+        return false;
+    }
+}    
+
+
+
+export {
+    validateName,
+    validateEmail,
+    validatePassword,
+    validateConfirmPassword,
+    validatePhoneNr
+  };

@@ -336,57 +336,59 @@ ul li.active{
         </div>
       </div>
     </section>
-  </main>
+</main>
   <div class="pagination-container">
     <div class="pagination">
-        <button class="btn1" onclick="backbtn()"> <img src="img/arrow2.png">prev</button>
-        <ul>
-            <li class="link active" value="1" onclick="activeLink()">1</li>
-            <li class="link" value="2" onclick="activeLink()">2</li>
-            <li class="link" value="3" onclick="activeLink()">3</li>
-            <li class="link" value="4" onclick="activeLink()">4</li>
-            <li class="link" value="5" onclick="activeLink()">5</li>
-            <li class="link" value="6" onclick="activeLink()">6</li>
-        </ul>
-        <button class="btn2" onclick="nextbtn()">next<img src="img/arrow2.png"></button>
+      <button class="btn1" onclick="backbtn()"> <img src="img/arrow2.png">prev</button>
+      <ul>
+        <li class="link active" value="1" onclick="activeLink()">1</li>
+        <li class="link" value="2" onclick="activeLink()">2</li>
+        <li class="link" value="3" onclick="activeLink()">3</li>
+        <li class="link" value="4" onclick="activeLink()">4</li>
+        <li class="link" value="5" onclick="activeLink()">5</li>
+        <li class="link" value="6" onclick="activeLink()">6</li>
+      </ul>
+      <button class="btn2" onclick="nextbtn()">next<img src="img/arrow2.png"></button>
     </div>
-</div>
+  </div>
 
   <footer>
     <p>&copy; 2023 Pets Up for Adoption</p>
   </footer>
-</body>
-<script>
-  let link = document.getElementsByClassName("link");
- 
-  let currentValue=1;
-  
-  function activeLink(){
-      for(l of link ){
-          l.classList.remove("active");
-      }
-  event.target.classList.add("active");
-  currentValue = event.target.value;
-  }
 
-  function backbtn(){
-  if(currentValue>1){
-      for(l of link ){
-      l.classList.remove("active");
+  <script>
+    let link = document.getElementsByClassName("link");
+    let currentValue = 1;
+
+    function activeLink() {
+      for (l of link) {
+        l.classList.remove("active");
       }
-      currentValue--;
-      link[currentValue-1].classList.add("active")
-  }
-}
-function nextbtn(){
-  if(currentValue<6){
-      for(l of link ){
-      l.classList.remove("active");
+      event.target.classList.add("active");
+      currentValue = event.target.value;
+    }
+
+    function backbtn() {
+      if (currentValue > 1) {
+        for (l of link) {
+          l.classList.remove("active");
+        }
+        currentValue--;
+        link[currentValue - 1].classList.add("active");
       }
-      currentValue++;
-      link[currentValue-1].classList.add("active")
-  }
-}
-</script>
+    }
+
+    function nextbtn() {
+      if (currentValue < 6) {
+        for (l of link) {
+          l.classList.remove("active");
+        }
+        currentValue++;
+        link[currentValue - 1].classList.add("active");
+      }
+    }
+
+  </script>
+</body>
 
 </html>

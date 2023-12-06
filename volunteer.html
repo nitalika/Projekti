@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="sign.css">
-  <script src="validation.js" defer></script>
 </head>
 <body>
   <div class="container">
@@ -14,7 +13,7 @@
       <p>Together, we can make a difference. Your generosity matters.</p>
     </div>
 
-    <form id="form" onsubmit="return validateForm()">
+    <form id="form">
       <div class="row">
         <div class="col">
           <h3 class="title">PERSONAL INFORMATION</h3>
@@ -39,13 +38,21 @@
           </div>
 
           <div class="inputbox">
+            <span>Last Name:</span>
+            <input type="text" id="lastName">
+            <p id="lastNameError" class="error"></p>
+          </div>
+
+          <div class="inputbox">
             <span>Email:</span>
-            <input type="email" />
+            <input type="email" id="email">
+            <p id="emailError" class="error"></p>
           </div>
 
           <div class="inputbox">
             <span>Phone Number:</span>
-            <input type="tel" />
+            <input type="tel" id="phoneNr" />
+            <p id="phoneNrError" class="error"></p>
           </div>
 
           <div class="select">
@@ -86,5 +93,20 @@
       <input type="submit" value="Volunteer" class="submit-btn" />
     </form>
   </div>
+
+  <script type="module" src="validation.js"></script>
+  <script type="module">
+    import { validateName, validateEmail, validatePhoneNr } from './validation.js';
+
+    document.getElementById('form').addEventListener('submit', function(event) {
+      var isValidName = validateName();
+      var isValidEmail = validateEmail();
+      var isValidPhoneNr = validatePhoneNr();
+
+      if (!isValidName || !isValidEmail || !isValidPhoneNr) {
+        event.preventDefault();
+      }
+    });
+  </script>
 </body>
 </html>
