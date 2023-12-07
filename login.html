@@ -6,6 +6,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="sign.css" />
     <script src="validation.js" defer></script>
+
 </head>
 <body>
     <div class="container">
@@ -33,9 +34,24 @@
                     </div>
                 </div>
             </div>
-            <input type="button" value="Sign up" class="submit-btn" onclick="validateLogin()">             
+            <input type="submit" value="Sign up" class="submit-btn">
             <p class="par2">Dont have an account? <a href="join.html">Sign up here</a></p>
         </form>
     </div>
+
+    <script type="module">
+      import { validateEmail, validatePassword } from './validation.js';
+  
+      document.getElementById('form').addEventListener('submit', function(event) {
+        var isValidEmail = validateEmail();
+        var isValidPassword = validatePassword();
+  
+        if (!isValidEmail || !isValidPassword) {
+          event.preventDefault();
+        }
+      });
+  </script>
+
+
 </body>
 </html>

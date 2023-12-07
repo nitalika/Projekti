@@ -27,32 +27,37 @@
                         <span>Name:</span>
                         <input type="text" id="firstName">
                         <p id="nameError" class="error"></p>
-                    </div>
+                      </div>
 
                     <div class="inputbox">
                         <span>Email:</span>
-                        <input type="email" id="donateEmail">
+                        <input type="email" id="email">
                         <p id="emailError" class="error"></p>
                     </div>
-
+            
+            
                     <div class="inputbox">
                         <span>Address:</span>
-                        <input type="text" />
+                        <input type="text" id="adress" />
+                        <p  id="adressError" class="error"></p>
                     </div>
 
                     <div class="inputbox">
-                        <span>City:</span>
-                        <input type="text" />
-                    </div>
-
+                        <span>Phone Number:</span>
+                        <input type="tel" id="phoneNr" />
+                        <p id="phoneNrError" class="error"></p>
+                      </div>
+                        
                     <div class="inputbox">
                         <span>State:</span>
-                        <input type="select" />
+                        <input type="text" id="state" />
+                        <p id="stateError" class="error"></p>
                     </div>
 
                     <div class="inputbox">
                         <span>Zip Code:</span>
-                        <input type="text" />
+                        <input type="text" id="zip"/>
+                        <p id="zipError" class="error"></p>
                     </div>
                 </div>
 
@@ -93,5 +98,26 @@
             <input type="submit" value="donate" class="submit-btn"/>
         </form>
     </div>
+
+
+    
+    <script type="module">
+      import { validateName, validateEmail, validatePhoneNr, validateAdress, validateZip, validateState } from './validation.js';
+  
+      document.getElementById('form').addEventListener('submit', function(event) {
+        var isValidName = validateName();
+        var isValidEmail = validateEmail();
+        var isValidPhoneNr = validatePhoneNr();
+        var isValidAdress = validateAdress();
+        var isValidZip = validateZip();
+        var isValidState = validateState();
+
+        
+        if (!isValidName || !isValidEmail || !isValidPhoneNr || !isValidAdress || !isValidZip || !isValidState) {
+          event.preventDefault();
+        }
+      });
+  </script>
+
 </body>
 </html>

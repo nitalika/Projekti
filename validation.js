@@ -6,8 +6,10 @@ document.getElementById('form').addEventListener('submit', function(event) {
     var isValidConfirmPassword = validateConfirmPassword();
     var isValidPhoneNr = validatePhoneNr();
     var isValidBdate = validateBdate();
+    var isValidAdress = validateAdress();
+    var isValidState = validateState();
 
-    if (!isValidName || !isValidLname|| !isValidEmail || !isValidPassword || !isValidConfirmPassword || !isValidPhoneNr || !isValidBdate ) {
+    if (!isValidName || !isValidLname|| !isValidEmail || !isValidPassword || !isValidConfirmPassword || !isValidPhoneNr || !isValidBdate || !isValidAdress || !isValidZip || !isValidState) {
         event.preventDefault();
     }
 });
@@ -123,17 +125,6 @@ function validateConfirmPassword() {
     return true;
 }
 
-//per loginFormen
-function validateLogin() {
-    var isValidEmail = validateEmail();
-    var isValidPassword = validatePassword();
-
-    if (isValidEmail && isValidPassword) {
-        document.getElementById('form').submit();
-    }
-}
-
-
 
 
 function validatePhoneNr() {
@@ -180,12 +171,68 @@ function validateBdate() {
     return true; 
 }
 
+function validateAdress() {
+    var adress = document.getElementById('adress').value;
+    var adressError = document.getElementById('adressError');
+
+    adressError.innerHTML = '';
+
+    if (adress.trim() === '') {
+        adressError.innerHTML = 'Adress cannot be empty.';
+        return false;
+    }
+}
+
+function validateZip() {
+    var zip = document.getElementById('zip').value;
+    var zipError = document.getElementById('zipError');
+
+    zipError.innerHTML = '';
+
+    if (zip.trim() === '') {
+        zipError.innerHTML = 'Zip code cannot be empty.';
+        return false;
+    }
+    var zipRegex = /^[0-9-]{4,16}$/;
+
+    if (!zipRegex.test(zip)) {
+        zipError.innerHTML = 'Use numbers and (-), between 4 and 16 characters.';
+        return false;
+    }
+
+    return true;
+}
+
+
+function validateState() {
+    var state = document.getElementById('state').value;
+    var stateError = document.getElementById('stateError');
+
+    stateError.innerHTML = '';
+
+    if (state.trim() === '') {
+        stateError.innerHTML = 'state code cannot be empty.';
+        return false;
+    }
+    var stateRegex = /^[A-Za-z ""]+$/;
+
+    if (!stateRegex.test(state)) {
+        stateError.innerHTML = 'Use letters';
+        return false;
+    }
+    
+    return true;
+}
 
 export {
     validateName,
+    validateLname,
     validateEmail,
     validatePassword,
     validateConfirmPassword,
     validatePhoneNr,
     validateBdate,
-  };
+    validateAdress,
+    validateZip,
+    validateState,
+};

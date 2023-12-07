@@ -53,9 +53,29 @@
                 </div>
             </div>
             <input type="submit" value="Sign up" class="submit-btn">
-            <p class="par2">Already have an account? <a href="login.html">Login here</a></p>
+                        <p class="par2">Already have an account? <a href="login.html">Login here</a></p>
 
         </form>
     </div>
+
+
+
+    <script type="module">
+        import { validateName,  validateLname, validateEmail, validatePassword, validateConfirmPassword} from './validation.js';
+    
+        document.getElementById('form').addEventListener('submit', function(event) {
+        var isValidName = validateName();
+        var isValidLname = validateLname();
+        var isValidEmail = validateEmail();
+        var isValidConfirmPassword = validateConfirmPassword();
+
+    
+          if (!isValidName || !isValidLname || !isValidEmail || !isValidPassword || !isValidConfirmPassword) {
+            event.preventDefault();
+          }
+        });
+    </script>
+
+
 </body>
 </html>
