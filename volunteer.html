@@ -26,7 +26,8 @@
 
           <div class="inputbox">
             <span>Date of birth</span>
-            <input type="date" />
+            <input type="date" id="birthDate"/>
+            <p id="bDateError" class="error"></p>
           </div>
 
           <div class="row gender-inputs">
@@ -57,7 +58,7 @@
 
           <div class="select">
             <span>City:</span>
-            <select>
+            <select id="citySelect">
               <option value="Ferizaji">Ferizaji</option>
               <option value="Gjilani">Gjilani</option>
               <option value="Gjakova">Gjakova</option>
@@ -66,6 +67,7 @@
               <option value="Peja">Peja</option>
               <option value="Rahoveci">Rahoveci</option>
             </select>
+            <p id="cityError" class="error"></p>
           </div>
 
           <div class="inputbox">
@@ -96,17 +98,18 @@
 
   <script type="module" src="validation.js"></script>
   <script type="module">
-    import { validateName, validateEmail, validatePhoneNr } from './validation.js';
+    import { validateName, validateEmail, validatePhoneNr, validateBdate, } from './validation.js';
 
     document.getElementById('form').addEventListener('submit', function(event) {
       var isValidName = validateName();
       var isValidEmail = validateEmail();
       var isValidPhoneNr = validatePhoneNr();
+      var isValidBdate = validateBdate();  
 
-      if (!isValidName || !isValidEmail || !isValidPhoneNr) {
+      if (!isValidName || !isValidEmail || !isValidPhoneNr || !isValidBdate ) {
         event.preventDefault();
       }
     });
-  </script>
+</script>
 </body>
 </html>

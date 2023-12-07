@@ -5,8 +5,9 @@ document.getElementById('form').addEventListener('submit', function(event) {
     var isValidPassword = validatePassword();
     var isValidConfirmPassword = validateConfirmPassword();
     var isValidPhoneNr = validatePhoneNr();
+    var isValidBdate = validateBdate();
 
-    if (!isValidName || !isValidLname|| !isValidEmail || !isValidPassword || !isValidConfirmPassword || !isValidPhoneNr) {
+    if (!isValidName || !isValidLname|| !isValidEmail || !isValidPassword || !isValidConfirmPassword || !isValidPhoneNr || !isValidBdate ) {
         event.preventDefault();
     }
 });
@@ -158,11 +159,34 @@ function validatePhoneNr() {
 }    
 
 
+function validateBdate() {
+    var birthDate = document.getElementById('birthDate').value;
+    var bDateError = document.getElementById('bDateError');
+
+    bDateError.innerHTML = '';
+
+    if (birthDate.trim() === '') {
+        bDateError.innerHTML = 'Birth date cannot be empty.';
+        return false;
+    }
+
+    var birthYear = new Date(birthDate).getFullYear();
+
+    if (birthYear > 2005 || birthYear < 1973) {
+        bDateError.innerHTML = 'You cannot volunteer if you are under 18 or over 50';
+        return false;
+    }
+
+    return true; 
+}
+
 
 export {
     validateName,
     validateEmail,
     validatePassword,
     validateConfirmPassword,
-    validatePhoneNr
+    validatePhoneNr,
+    validateBdate,
+    validateGender
   };
