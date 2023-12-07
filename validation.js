@@ -188,5 +188,4 @@ export {
     validateConfirmPassword,
     validatePhoneNr,
     validateBdate,
-    validateGender
   };
