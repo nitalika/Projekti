@@ -8,9 +8,17 @@ document.getElementById('form').addEventListener('submit', function(event) {
     var isValidBdate = validateBdate();
     var isValidAdress = validateAdress();
     var isValidState = validateState();
+    var isValidNameOnCard = validateNameOnCard();
+    var isValidCreditCard = validateCreditCard();
+    var isValidCardM = validateCardM();    
+    var isValidCardY = validateCardY();
+    var isValidCVV = validateCVV();
 
-    if (!isValidName || !isValidLname|| !isValidEmail || !isValidPassword || !isValidConfirmPassword || !isValidPhoneNr || !isValidBdate || !isValidAdress || !isValidZip || !isValidState) {
+
+
+    if (!isValidName || !isValidLname|| !isValidEmail || !isValidPassword || !isValidConfirmPassword || !isValidPhoneNr || !isValidBdate || !isValidAdress || !isValidZip || !isValidState || !isValidNameOnCard || !isValidCreditCard || !isValidCardMc|| !isValidCardY || !isValidCVV) {
         event.preventDefault();
+        
     }
 });
 
@@ -171,6 +179,10 @@ function validateBdate() {
     return true; 
 }
 
+
+
+
+//donation
 function validateAdress() {
     var adress = document.getElementById('adress').value;
     var adressError = document.getElementById('adressError');
@@ -224,6 +236,112 @@ function validateState() {
     return true;
 }
 
+function validateNameOnCard() {
+    var cardName = document.getElementById('cardName').value;
+    var cardNameError = document.getElementById('cardNameError');
+
+    cardNameError.innerHTML = '';
+
+    if (cardName.trim() === '') {
+        cardNameError.innerHTML = 'name on card cannot be empty.';
+        return false;
+    }
+    var cardNameRegex = /^[A-Za-z ""]+$/;
+
+    if (!cardNameRegex.test(cardName)) {
+        cardNameError.innerHTML = 'Use letters';
+        return false;
+    }
+    
+    return true;
+}
+
+
+function validateCreditCard() {
+    var creditCard = document.getElementById('creditCard').value;
+    var creditCardError = document.getElementById('creditCardError');
+
+    creditCardError.innerHTML = '';
+
+    if (creditCard.trim() === '') {
+        creditCardError.innerHTML = 'Credit card cannot be empty.';
+        return false;
+    }
+
+    var creditCardRegex = /^[0-9 -]+$/;
+
+    if (!creditCardRegex.test(creditCard)) {
+        creditCardError.innerHTML = 'Use numbers only.';
+        return false;
+    }
+
+    return true;
+}
+
+function validateCardM() {
+    var expMonth = document.getElementById('expMonth').value;
+    var expMonthError = document.getElementById('expMonthError');
+
+    expMonthError.innerHTML = '';
+
+    if (expMonth.trim() === '') {
+        expMonthError.innerHTML = 'expMonth cannot be empty.';
+        return false;
+    }
+
+    var expMonthRegex = /^[0-9]{2}$/;
+
+    if (!expMonthRegex.test(expMonth)) {
+        expMonthError.innerHTML = 'Write the Month.';
+        return false;
+    }
+
+    return true;
+}
+
+function validateCardY() {
+    var expYear = document.getElementById('expYear').value;
+    var expYearError = document.getElementById('expYearError');
+
+    expYearError.innerHTML = '';
+
+    if (expYear.trim() === '') {
+        expYearError.innerHTML = 'expYear cannot be empty.';
+        return false;
+    }
+
+    var expYearRegex = /^[0-9]{4}$/;
+
+    if (!expYearRegex.test(expYear)) {
+        expYearError.innerHTML = 'write the Year';
+        return false;
+    }
+
+    return true;
+}
+
+function validateCVV() {
+    var CVV = document.getElementById('CVV').value;
+    var CVVError = document.getElementById('CVVError');
+
+    CVVError.innerHTML = '';
+
+    if (CVV.trim() === '') {
+        CVVError.innerHTML = 'CVV cannot be empty.';
+        return false;
+    }
+
+    var CVVRegex = /^[0-9]{3,4}$/;
+
+    if (!CVVRegex.test(CVV)) {
+        CVVError.innerHTML = 'write the CVV nr';
+        return false;
+    }
+
+    return true;
+}
+
+
 export {
     validateName,
     validateLname,
@@ -235,4 +353,9 @@ export {
     validateAdress,
     validateZip,
     validateState,
+    validateNameOnCard,
+    validateCreditCard,
+    validateCardM,
+    validateCardY,
+    validateCVV,
 };

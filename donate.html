@@ -71,27 +71,32 @@
 
                     <div class="inputbox">
                         <span>Name on card:</span>
-                        <input type="text" />
+                        <input type="text" id="cardName" />
+                        <p id="cardNameError" class="error"></p>
                     </div>
 
                     <div class="inputbox">
                         <span>Credit card number:</span>
-                        <input type="text" />
+                        <input type="text" id="creditCard" />
+                        <p id="creditCardError" class="error"></p>
                     </div>
 
                     <div class="inputbox">
                         <span>exp month:</span>
-                        <input type="text" />
+                        <input type="text" id="expMonth"/>
+                        <p id="expMonthError" class="error"></p>
                     </div>
 
                     <div class="inputbox">
                         <span>exp year:</span>
-                        <input type="number" />
+                        <input type="number" id="expYear" />
+                        <p id="expYearError" class="error"></p>
                     </div>
 
                     <div class="inputbox">
                         <span>CVV:</span>
-                        <input type="text" />
+                        <input type="text" id="CVV"/>
+                        <p id="CVVError" class="error"></p>
                     </div>
                 </div>
             </div>
@@ -102,7 +107,7 @@
 
     
     <script type="module">
-      import { validateName, validateEmail, validatePhoneNr, validateAdress, validateZip, validateState } from './validation.js';
+      import { validateName, validateEmail, validatePhoneNr, validateAdress, validateZip, validateState, validateNameOnCard, validateCreditCard, validateCardM, validateCardY, validateCVV } from './validation.js';
   
       document.getElementById('form').addEventListener('submit', function(event) {
         var isValidName = validateName();
@@ -111,9 +116,15 @@
         var isValidAdress = validateAdress();
         var isValidZip = validateZip();
         var isValidState = validateState();
+        var isValidNameOnCard = validateNameOnCard();
+        var isValidCreditCard = validateCreditCard();
+        var isValidCardM = validateCardM();
+        var isValidCardY = validateCardY();
+        var isValidCVV = validateCVV();
+
 
         
-        if (!isValidName || !isValidEmail || !isValidPhoneNr || !isValidAdress || !isValidZip || !isValidState) {
+        if (!isValidName || !isValidEmail || !isValidPhoneNr || !isValidAdress || !isValidZip || !isValidState || !isValidNameOnCard || !isValidCreditCard || !isValidCardM || !isValidCardM || !isValidCVV) {
           event.preventDefault();
         }
       });
