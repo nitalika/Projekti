@@ -1,104 +1,99 @@
+body {
+  font-family: "Open Sans", "sans-serif";
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-transform: capitalize;
+  transition: all 0.2s linear;
+  background: linear-gradient(120deg, #669966, beige) no-repeat fixed;
+  background-size: cover;
+}
 
-      body {
-        font-family: "Open Sans", "sans-serif";
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        outline: none;
-        border: none;
-        text-transform: capitalize;
-        transition: all 0.2s linear;
-        background: linear-gradient(120deg, #669966, beige);
-      }
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 25px;
+  font-size: 30px;
+  padding-bottom: 70px;
+}
 
-      .container {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start; 
-        padding: 25px;
-        font-size: 30px;
-        padding-bottom: 70px; 
-      }
+.container form {
+  padding: 20px;
+  width: 700px;
+  background: rgb(178, 200, 178);
+  border-radius: 10px;
+}
 
-      .container form {
-        padding: 20px;
-        width: 600px;
-        background: rgb(178, 200, 178);
-        border-radius: 10px;
-      }
-      
-      .container form {
-        padding: 20px;
-        width: 700px;
-        background: rgb(178, 200, 178);
-      }
+.container form .row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
 
+.container form .col {
+  flex: 250px;
+}
 
-      .container form .row {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 15px;
-      }
+.container form .row .col .title {
+  font-size: 25px;
+  color: #333;
+  padding-bottom: 15px;
+  text-transform: uppercase;
+}
 
-      .container form .row .col {
-        flex: 250px;
-      }
+.container form .row .col .title .inputbox,
+.container form input {
+  font-size: 30px;
+}
 
-      .container form {
-        padding: 20px; 
-        width: 700px; 
-        background: rgb(178, 200, 178); 
-    }
+.container form .row .col .inputbox textarea {
+  width: 40%;
+  padding: 30px;
+  resize: vertical;
+}
 
-    .container form .row {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 15px;
-      }
+.container form .row .col .inputbox span {
+  display: block;
+}
 
-    .container form .col {
-        flex: 250px; 
-    }
+.info {
+  padding: 25px;
+  width: 50%;
+  background-color: transparent;
+}
 
-      .container form .row .col .title {
-        font-size: 25px;
-        color: #333;
-        padding-bottom: 15px;
-        text-transform: uppercase;
-      }
+.info h2 {
+  font-size: 28px;
+  margin-bottom: 15px;
+}
 
-      .container form .row .col .title .inputbox,
-      input {
-        font-size: 30px;
-      }
+.info p {
+  font-size: 25px;
+  line-height: 1.6;
+}
 
-      .container form .row .col .inputbox textarea {
-        width: 40%;
-        padding: 30px;
-        resize: vertical;
-      }
+.par2 {
+  font-size: 20px;
+}
 
-      .container form .row .col .inputbox span {
-        display: block;
-      }
+@media only screen and (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
 
-      .info {
-        padding: 25px;
-        width: 50%;
-        background-color: transparent;
-      }
+  .container form {
+    width: 100%;
+  }
 
-      .info h2 {
-        font-size: 28px;
-        margin-bottom: 15px;
-      }
+  .container form .row .col .inputbox textarea {
+    width: 100%;
+  }
 
-      .info p {
-        font-size: 25px;
-        line-height: 1.6;
-      }
-
-      .par2 {
-       font-size: 20px;
-     }
- 
+  .info {
+    width: 100%;
+  }
+}
